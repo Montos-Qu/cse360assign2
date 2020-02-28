@@ -16,58 +16,52 @@ public class SimpleList {
 
 	public void add(int element) // + add(int) : void
 	{
-		if (this.count == list.length) {
-			int h = this.count / 2; // make it 50%
-			resize(count + h);
-		}
-
-//				if (this.count == 0)
-//				{
-//					list[0] = element; 
-//					this.count++;   // count the number of the elements;
-//				}
-
-		for (int i = this.count - 1; i > 0; i--) {
-			list[i] = list[i - 1]; // move element to the back
-		}
-		
-		list[0] = element; // put the element at first position
-		this.count++; // count the number of the elements;
-	}
-
-	public void remove(int element) // + remove (int): void
-	{
-		int n = list.length;
-
-		// use the search instead of the if to make it short and easier.
-		int rmEle = search(element);
-//		if(list[n] == 0)
-//		for (int i = 0; i < n; i++) 
-//		{
-//			if (list[i] == element) 
-//			{
-//				rmEle = i;         // found element, set the rmEle to the position in the list
-//				this.count--;
-//			}
-//		}
-
-		// remove found element
-		if (rmEle != -1) {
-			for (int i = rmEle; i < n - 1; i++) {
-				list[i] = list[i + 1]; // Move elements which after the target element
+		int n = 10;
+		if (n > 0) 
+		{
+			for (int i = n - 1; i > 0; i--) 
+			{
+				if (n == 10) 
+				{
+					list[i] = list[i - 1];        //move element to the back
+				} 		
 			}
-			this.count--;
-			list[n - 1] = 0; // set the last element to 0
-		} else {
-			System.out.println("There is no such element."); // element not found
 		}
-
-		// find 75% location
-		int l = 3 * list.length / 4;
-		if (this.count < l) {
-			resize(this.count);
+		list[0] = element;        //put the element at first position
+		if (this.count < 10)
+		{
+			this.count++;   // count the number of the elements;
 		}
 	}
+
+	public void remove(int element) //+ remove (int): void
+	{
+		int n = 10;
+		//int n = list.length;
+		int rmEle = -1;
+		for (int i = 0; i < n; i++) 
+		{
+			if (list[i] == element) 
+			{
+				rmEle = i;         // found element, set the rmEle to the position in the list
+				this.count--;
+			}
+		}
+		if (rmEle != -1)           //  remove found element 
+		{
+			for (int i = rmEle; i < n - 1; i++) 
+			{
+				list[i] = list[i + 1];  // Move elements which after the target element
+			}
+			list[n - 1] = 0;           // set the last element to 0
+		}
+		else 
+		{
+			System.out.println("There is no such element.");   // element not found
+		}
+
+	}
+
 
 	public int count() // + count (): int
 	{
@@ -100,22 +94,6 @@ public class SimpleList {
 		} else {
 			System.out.println("There is no such element.");
 			return found;
-		}
-	}
-
-	// add a new method to change the size of the list
-	public void resize(int s) {
-		int array[] = new int[s];
-
-		// copy the list elements to the new array
-		for (int i = 0; i < s && i < this.count; i++) {
-			array[i] = list[i];
-		}
-
-		list = array;
-
-		if (s < this.count) {
-			this.count = s;
 		}
 	}
 
