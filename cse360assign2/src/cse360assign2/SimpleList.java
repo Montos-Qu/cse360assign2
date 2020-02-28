@@ -70,7 +70,7 @@ public class SimpleList {
 
 	}
 
-	public int count() // + count (): int
+	public int count() 
 	{
 		return this.count;
 	}
@@ -122,7 +122,7 @@ public class SimpleList {
 		
 		public void append(int element) {
 
-			// increasing size if full
+			// increasing 50% size if the list full
 			if (this.count == list.length) {
 
 				int h = this.count / 2;
@@ -131,18 +131,15 @@ public class SimpleList {
 
 			}
 
-			// adding at count index
 			list[this.count] = element;
 			this.count++;
 
 		}
 
 		// returns the first element
-
 		public int first() {
 
-			// throw the exception (change to return -1 if you dont want to use
-			// exceptions) if there is no first element
+			// throw the exception 
 			if (this.count == 0) {
 
 				throw new RuntimeException("list is empty!");
@@ -150,28 +147,24 @@ public class SimpleList {
 			}
 
 			// otherwise returning first element
-
 			return list[0];
 			
 
 		}
 		public int last() {
 
-			// throw the exception (change to return -1 if you dont want to use
-			// exceptions) if there is no first element
+			// throw the exception
 			if (this.count == 0) {
 
 				throw new RuntimeException("list is empty!");
 
 			}
 
-			// otherwise returning first element
-
+			// otherwise returning last element
 			return list[this.count];
 		}
 
-		// returns the current capacity (might not be the same as count)
-
+		// returns the current capacity 
 		public int size() {
 
 			return list.length;
