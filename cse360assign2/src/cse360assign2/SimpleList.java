@@ -1,5 +1,5 @@
 //        Github URL      
-//  https://montos-qu.github.io/cse360assign2/
+//  https://github.com/Montos-Qu/cse360assign2
 //  This is a public Repository, no need access information
 package cse360assign2;
 /**
